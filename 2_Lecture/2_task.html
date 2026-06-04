@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2_task</title>
+    <link rel="stylesheet" href="./2_task.css" />
 </head>
 
 <body>
-    <table border="2" cellspacing="0" cellpadding="15">
+    
+    <table border="1" cellspacing="0" cellpadding="15">
+        <caption>Time Table</caption>
         <tr>
             <th>Days</th>
             <th>1</th>
@@ -21,45 +24,45 @@
 
         </tr>
         <tr>
-            <td>MON</td>
-            <td>c++</td>
-            <td>HTML</td>
+            <td class="days">MON</td>
+            <td class="cpp">c++</td>
+            <td class="html">HTML</td>
             <td>CSS</td>
-            <td rowspan="5">B<br><br>R<br><br>E<br><br>A<br><br>K<br><br>
+            <td class="break" rowspan="5">B<br><br>R<br><br>E<br><br>A<br><br>K<br><br>
             </td>
-            <td colspan="2">JAVA</td>
-            <td colspan="2">C++</td>
+            <td colspan="2" class="java">JAVA</td>
+            <td colspan="2" class="cpp">C++</td>
 
         </tr>
         <tr>
-            <td>TUE</td>
-            <td ROWSPAN="3"> HINDI</td>
+            <td class="days">TUE</td>
+            <td ROWSPAN="3" class="hindi"> HINDI</td>
             <td colspan="2"> WEBDEV</td>
-            <td>C++</td>
-            <td>HTML</td>
+            <td class="cpp">C++</td>
+            <td class="html">HTML</td>
             <td>CSS</td>
-            <td rowspan="2">OS</td>
+            <td rowspan="2" class="os">OS</td>
 
         </tr>
         <tr>
-            <td>WED</td>
-            <td colspan="2"> CPP</td>
-            <td colspan="3">Django</td>
+            <td class="days"> WED</td>
+            <td colspan="2" class="cpp"> C++</td>
+            <td colspan="3" class="django">Django</td>
 
         </tr>
         <tr>
-            <td>THU</td>
-            <td colspan="2"> JAVA</td>
-            <td>English</td>
+            <td class="days">THU</td>
+            <td colspan="2" class="java"> JAVA</td>
+            <td class="english"> English</td>
             <td>GO</td>
-            <td colspan="2">Networks</td>
+            <td colspan="2" class="network">Networks</td>
 
         </tr>
         <tr>
-            <td>FRI</td>
+            <td class="days"> FRI</td>
 
-            <td colspan="3">DATA SCIENCE</td>
-            <td colspan="2">c++</td>
+            <td colspan="3" class="DATASCIENCE">DATA SCIENCE</td>
+            <td colspan="2" class="cpp">c++</td>
             <td>GO</td>
             <td>Python</td>
 
