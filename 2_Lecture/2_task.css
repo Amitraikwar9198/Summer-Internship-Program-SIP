@@ -14,7 +14,7 @@ body{
 }
 
 table{
-    background-color:#ffffff;
+    background:transparent;
     border: 10px double rgb(247, 210, 179);
     border-radius:20px;
     width:140vh;
