@@ -23,95 +23,66 @@ body{
 
 
 .slider{
-  display: block;
-  width: 100px;
-  height: 100px;
-  transition:
-    width 2s,
-    height 2s,
-    background-color 2s,
-    rotate 2s;
-  scroll-padding: 50px;
-    width:450px;
-    height:650px;
     position:relative;
+    width:500px;
+    height:600px;
 }
 
-
-.card{
+.img-box{
     position:absolute;
     left:50%;
     transform:translateX(-50%);
     border-radius:20px;
     overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    transition:0.5s;
 }
 
-.card img{
+.img-box img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transform:0.
 }
 
-.top:hover{
-    transform:scale(1.2);
-    z-index:9;
-}
-.upper:hover{
-    transform:scale(1.2);
-    z-index:9;
-}
-.active:hover{
-    transform:scale(1.2);
-    z-index:9;
-}
-.lower:hover{
-    transform:scale(1.2);
-    z-index:9;
-}
-.bottom:hover{
-    transform:scale(1.2);
-    z-index:9;
+/* Active Image */
+.active{
+    width:500px;
+    height:280px;
+    top:160px;
+    z-index:10;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-
-
+/* Top Images */
 .top{
     width:280px;
-    height:150px;
+    height:140px;
     top:0;
-    opacity:.25;
+    opacity:.4;
 }
 
-.upper{
-    width:370px;
+.top2{
+    width:350px;
     height:170px;
-    top:90px;
+    top:70px;
     opacity:.6;
 }
 
-.active{
-    width:500px;
-    height:250px;
-    top:210px;
-    z-index:10;
-}
-
-.lower{
-    width:370px;
+/* Bottom Images */
+.bottom1{
+    width:350px;
     height:170px;
-    top:480px;
-    opacity:.5;
-
+    top:380px;
+    opacity:.6;
 }
 
-.bottom{
+.bottom2{
     width:280px;
     height:140px;
-    top:610px;
-    opacity:.25;
-
+    top:500px;
+    opacity:.4;
+}
+.img-box:hover{
+    transform:translateX(-50%) scale(1.05);
 }
 
 
