@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f7f7f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:1200px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+
+.slider{
+  display: block;
+  width: 100px;
+  height: 100px;
+  transition:
+    width 2s,
+    height 2s,
+    background-color 2s,
+    rotate 2s;
+  scroll-padding: 50px;
+    width:450px;
+    height:650px;
+    position:relative;
+}
+
+
+.card{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:0.
+}
+
+.top:hover{
+    transform:scale(1.2);
+    z-index:9;
+}
+.upper:hover{
+    transform:scale(1.2);
+    z-index:9;
+}
+.active:hover{
+    transform:scale(1.2);
+    z-index:9;
+}
+.lower:hover{
+    transform:scale(1.2);
+    z-index:9;
+}
+.bottom:hover{
+    transform:scale(1.2);
+    z-index:9;
+}
+
+
+
+.top{
+    width:280px;
+    height:150px;
+    top:0;
+    opacity:.25;
+}
+
+.upper{
+    width:370px;
+    height:170px;
+    top:90px;
+    opacity:.6;
+}
+
+.active{
+    width:500px;
+    height:250px;
+    top:210px;
+    z-index:10;
+}
+
+.lower{
+    width:370px;
+    height:170px;
+    top:480px;
+    opacity:.5;
+
+}
+
+.bottom{
+    width:280px;
+    height:140px;
+    top:610px;
+    opacity:.25;
+
+}
+
+
+
+.content{
+    width:450px;
+    text-align:center;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    margin-bottom:60px;
+}
+
+.buttons button{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:3px solid #2b63d9;
+    background:#2b63d9;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+.content h1{
+    color:#0b3b97;
+    font-size:55px;
+    font-weight:bold;
+}
+
+.line{
+    width:420px;
+    height:3px;
+    background:#24489b;
+    margin:12px auto;
+}
+
+.content h3{
+    letter-spacing:5px;
+    color:#999;
+    font-weight:400;
+    margin-top:-10px;
+}
+
+.dots{
+    margin-top:80px;
+}
+
+.dots span{
+    width:14px;
+    height:14px;
+    background:#d8dceb;
+    display:inline-block;
+    border-radius:50%;
+    margin:0 6px;
+}
+
+.active-dot{
+    background:#123fa3 !important;
+}
