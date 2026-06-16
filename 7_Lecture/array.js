@@ -96,3 +96,30 @@ const sum2=array.reduce((sum,x)=>sum+x,0);
 const sum3=array.reduce((sum,x)=>sum+x);
 console.log(sum2);
 console.log(sum3);
+
+//find 
+//jaise hi condition satisfy hofi baise hi
+const f=array.find(function(x){
+    return 3
+});
+const fdemp=array.find(x=>x>3);
+console.log(f);
+console.log(fdemp);
+
+//some
+//bata hai ki condition  kuch element satisfy kar rahi hai ya nai
+const s=array.some(function(x){
+    return x>3;
+});
+const sdemo=array.some(x=>x>3);
+console.log(s);
+console.log(sdemo);
+
+//every
+//batata hai ki saare element satify karta hai ya nahi
+const e=array.every(function(x){
+    return x>5;
+});
+const edemo=arrat.every(x=>x>5);
+console.log(e);
+console.log(edemo);
