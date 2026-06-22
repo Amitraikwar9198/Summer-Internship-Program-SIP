@@ -235,38 +235,3 @@ body {
     font-size: 0.8rem;
 }
 
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.footer-text {
-    text-align: center;
-    margin-top: 1.5rem;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 0.75rem;
-}
-
-@media (max-width: 900px) {
-    .auth-wrapper {
-        flex-direction: column;
-    }
-
-    .left-panel {
-        min-height: 30vh;
-        padding: 1.5rem;
-    }
-
-    .left-panel img {
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .glass-card {
-        padding: 1.5rem;
-    }
-}
