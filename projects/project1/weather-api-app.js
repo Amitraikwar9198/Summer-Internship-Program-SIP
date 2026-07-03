@@ -1,40 +1,34 @@
-const apiKey = "YOUR_API_KEY";
+async function getWeather(){
 
-async function getWeather() {
+const city=document.getElementById("city").value;
 
-    const city = document.getElementById("city").value;
+const apiKey="57ecadfd7b40ad9f9fdb15aa524a5a14";
 
-    const api =
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-    const response = await fetch(api);
+try{
 
-    const data = await response.json();
+const response=await fetch(url);
 
-    if (data.cod == "404") {
+const data=await response.json();
 
-        alert("City Not Found");
+document.getElementById("result").innerHTML=`
+<h2>${data.name}</h2>
 
-        return;
+<p>🌡 Temperature : ${data.main.temp} °C</p>
 
-    }
+<p>💧 Humidity : ${data.main.humidity}%</p>
 
-    document.getElementById("temp").innerHTML =
-        Math.round(data.main.temp) + "°C";
+<p>🌬 Wind : ${data.wind.speed} m/s</p>
 
-    document.getElementById("cityName").innerHTML =
-        data.name;
+<p>☁ Weather : ${data.weather[0].main}</p>
+`;
 
-    document.getElementById("description").innerHTML =
-        data.weather[0].description;
+}
+catch{
 
-    document.getElementById("humidity").innerHTML =
-        data.main.humidity + "%";
+document.getElementById("result").innerHTML="City Not Found";
 
-    document.getElementById("wind").innerHTML =
-        data.wind.speed + " km/h";
-
-    document.getElementById("icon").src =
-        "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+}
 
 }

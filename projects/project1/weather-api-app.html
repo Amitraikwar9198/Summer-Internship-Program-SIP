@@ -11,46 +11,15 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
+<div class="weather">
 
-<div class="container">
+<h1>Weather App</h1>
 
-    <h1>🌦 Weather App</h1>
+<input type="text" id="city" placeholder="Enter City">
 
-    <div class="search-box">
-        <input type="text" id="city" placeholder="Enter City Name">
+<button onclick="getWeather()">Search</button>
 
-        <button onclick="getWeather()">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </div>
-
-    <div class="weather-box">
-
-        <img id="icon">
-
-        <h2 id="temp">--°C</h2>
-
-        <h3 id="cityName">City Name</h3>
-
-        <p id="description">Weather Description</p>
-
-        <div class="details">
-
-            <div>
-                <i class="fa-solid fa-droplet"></i>
-                <p id="humidity">0%</p>
-                <span>Humidity</span>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-wind"></i>
-                <p id="wind">0 km/h</p>
-                <span>Wind</span>
-            </div>
-
-        </div>
-
-    </div>
+<div id="result"></div>
 
 </div>
 
