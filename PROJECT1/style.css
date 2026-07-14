@@ -1,262 +1,650 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#f3f3f3;
-    font-family:Arial, sans-serif;
+html {
+    font-size: 16px;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* Top Bar */
-.topbar{
-    width:100%;
-    height:55px;
-    background:linear-gradient(to right,#14c6e7,#7b2ff7);
-    color:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 20px;
+.topbar {
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(to right, #14c6e7, #7b2ff7);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-.start{
+
+.start {
     border: 2px solid #ffffff;
     border-radius: 6px;
-    padding: 6px px;
-
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
-.spider{
+
+.spider {
     border: 2px solid #ffffff;
     border-radius: 6px;
     padding: 6px 8px;
 }
-.chat{
+
+.chat {
     border: 2px solid #ffffff;
     border-radius: 6px;
-    padding: 6px px;
+    padding: 6px 8px;
+}
 
+.left-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
-.left-nav span{
-    margin-right:15px;
-    cursor:pointer;
+
+.left-nav span {
+    margin-right: 0px;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
-.present{
-    border: #000;
+
+.right-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.right-nav button {
+    font-size: 0.85rem;
+    padding: 4px 8px !important;
+}
+
 /* Layout */
-.main-layout{
-    display:flex;
-    height:calc(100vh - 55px);
+.main-layout {
+    display: flex;
+    height: calc(100vh - 55px);
+    flex-wrap: wrap;
 }
 
 /* Sidebar */
-.sidebar{
-    width:80px;
-    background:#fff;
-    border-right:1px solid #ddd;
-    padding-top:20px;
+.sidebar {
+    width: 80px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+    overflow-y: auto;
 }
 
-.menu-item{
-    text-align:center;
-    margin-bottom:25px;
-    font-size:12px;
+.menu-item {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.menu-item i{
-    display:block;
-    font-size:22px;
-    margin-bottom:5px;
+.menu-item:hover {
+    background: #f0f0f0;
+}
+
+.menu-item i {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 5px;
 }
 
 /* Left Panel */
-.left-panel{
-
-    width:320px;
-    background:#fafafa;
-    border-right:1px solid #ddd;
-    padding:15px;
+.left-panel {
+    width: 320px;
+    background: #fafafa;
+    border-right: 1px solid #ddd;
+    padding: 15px;
+    overflow-y: auto;
+    min-width: 280px;
 }
 
-.search-box input{
-    width:100%;
-    padding:10px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    margin-bottom:15px;
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
-.template-grid{
+.template-grid {
     overflow-y: scroll;
-  scroll-behavior: smooth;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+    scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.card-box{
-    height:100px;
-    background:#ddd;
-    border-radius:8px;
+.card-box {
+    height: 100px;
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
 }
-.card-box img{
-    width:150px;
-    height:100px
+
+.card-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Workspace */
-.workspace{
+.workspace {
     overflow-y: scroll;
-  scroll-behavior: smooth;
-    flex:1;
-    padding:15px;
+    scroll-behavior: smooth;
+    flex: 1;
+    padding: 15px;
+    min-width: 0;
 }
 
-.toolbar{
-    background:#fff;
-    width:max-content;
-    margin:auto;
-    padding:8px 15px;
-    border-radius:25px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+.toolbar {
+    background: #fff;
+    width: 100%;
+    max-width: max-content;
+    margin: auto;
+    padding: 8px 15px;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
 }
 
-.toolbar button{
-    border:none;
-    background:none;
-    margin:0 8px;
+.toolbar button {
+    border: none;
+    background: none;
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.toolbar button:hover {
+    background: #f0f0f0;
+    border-radius: 4px;
+    padding: 4px;
 }
 
 /* Canvas */
-.canvas{
-    background:#fff;
-    margin-top:20px;
-    padding:35px;
-    border-radius:10px;
+.canvas {
+    background: #fff;
+    margin-top: 20px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
 }
 
 /* Circle */
-.circle{
-    width:130px;
-    height:130px;
-    background:#b8f163;
-    border-radius:50%;
+.circle {
+    width: 130px;
+    height: 130px;
+    background: #b8f163;
+    border-radius: 50%;
 }
 
 /* Square */
-.square{
-    width:130px;
-    height:130px;
-    background:#efd75c;
+.square {
+    width: 130px;
+    height: 130px;
+    background: #efd75c;
 }
 
 /* Triangle */
-.triangle{
-    width:0;
-    height:0;
-    border-left:65px solid transparent;
-    border-right:65px solid transparent;
-    border-bottom:130px solid #ff731e;
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+    border-bottom: 130px solid #ff731e;
 }
 
 /* Pentagon */
-.pentagon{
-    width:130px;
-    height:130px;
-    background:#2500bb;
-    clip-path:polygon(
-        50% 0%,
-        100% 38%,
-        82% 100%,
-        18% 100%,
-        0% 38%
-    );
+.pentagon {
+    width: 130px;
+    height: 130px;
+    background: #2500bb;
+    clip-path: polygon(50% 0%,
+            100% 38%,
+            82% 100%,
+            18% 100%,
+            0% 38%);
 }
 
 /* Plus */
-.plus{
-    width:100px;
-    height:100px;
-    position:relative;
+.plus {
+    width: 100px;
+    height: 100px;
+    position: relative;
 }
 
-.plus::before{
-    content:"";
-    position:absolute;
-    width:35px;
-    height:100px;
-    background:#000;
-    left: 32px
+.plus::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 100px;
+    background: #000;
+    left: 32px;
 }
 
-.plus::after{
-    content:"";
-    position:absolute;
-    width:100px;
-    height:35px;
-    background:#000;
-    top:32px;
+.plus::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    background: #000;
+    top: 32px;
 }
 
 /* Parallelogram */
-.parallelogram{
-    width:130px;
-    height:110px;
-    background:#b965e5;
-    transform:skew(20deg);
+.parallelogram {
+    width: 130px;
+    height: 110px;
+    background: #b965e5;
+    transform: skew(20deg);
 }
 
 /* Arrow */
-.arrow{
-    width:65px;
-    height:65px;
-    background:#8a57f6;
-    position:relative;
-    margin-top:60px;
+.arrow {
+    width: 65px;
+    height: 65px;
+    background: #8a57f6;
+    position: relative;
+    margin-top: 60px;
 }
 
-.arrow::before{
-    content:"";
-    position:absolute;
-    left:-32px;
-    top:-65px;
-    border-left:65px solid transparent;
-    border-right:65px solid transparent;
-    border-bottom:65px solid #8a57f6;
+.arrow::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: -65px;
+    border-left: 65px solid transparent;
+    border-right: 65px solid transparent;
+    border-bottom: 65px solid #8a57f6;
 }
 
 /* Heart */
-.heart{
-    width:90px;
-    height:90px;
-    background:red;
-    transform:rotate(-45deg);
-    position:relative;
-    margin-top:30px;
+.heart {
+    width: 90px;
+    height: 90px;
+    background: red;
+    transform: rotate(-45deg);
+    position: relative;
+    margin-top: 30px;
 }
 
 .heart::before,
-.heart::after{
-    content:"";
-    position:absolute;
-    width:90px;
-    height:90px;
-    background:red;
-    border-radius:50%;
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: red;
+    border-radius: 50%;
 }
 
-.heart::before{
-    top:-45px;
-    left:0;
+.heart::before {
+    top: -45px;
+    left: 0;
 }
 
-.heart::after{
-    top:0;
-    left:45px;
+.heart::after {
+    top: 0;
+    left: 45px;
 }
 
-.footer{
-    width:50vh;
-    background:#14c6e7;
+.footer {
+    width: 100%;
+    background: #14c6e7;
+    margin-top: 20px;
+    height: 100px;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .topbar {
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .left-nav,
+    .right-nav {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .left-nav span,
+    .right-nav span {
+        display: none;
+    }
+
+    .right-nav button {
+        padding: 6px 10px !important;
+        font-size: 0.75rem;
+    }
+
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        overflow-x: auto;
+    }
+
+    .menu-item {
+        margin: 0 10px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .left-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        max-height: 200px;
+    }
+
+    .template-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .workspace {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .toolbar {
+        padding: 8px 10px;
+        gap: 4px;
+    }
+
+    .toolbar button {
+        margin: 0 2px;
+        font-size: 0.8rem;
+    }
+
+    .canvas {
+        padding: 20px 15px;
+    }
+
+    .circle,
+    .square,
+    .pentagon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .triangle {
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #ff731e;
+    }
+
+    .plus {
+        width: 80px;
+        height: 80px;
+    }
+
+    .plus::before {
+        width: 28px;
+        height: 80px;
+        left: 26px;
+    }
+
+    .plus::after {
+        width: 80px;
+        height: 28px;
+        top: 26px;
+    }
+
+    .parallelogram {
+        width: 100px;
+        height: 85px;
+    }
+
+    .arrow {
+        width: 50px;
+        height: 50px;
+        margin-top: 40px;
+    }
+
+    .arrow::before {
+        left: -25px;
+        top: -50px;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid #8a57f6;
+    }
+
+    .heart {
+        width: 70px;
+        height: 70px;
+        margin-top: 20px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 70px;
+        height: 70px;
+    }
+
+    .heart::before {
+        top: -35px;
+    }
+
+    .heart::after {
+        left: 35px;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .topbar {
+        padding: 8px;
+    }
+
+    .start {
+        display: none;
+    }
+
+    .left-nav span {
+        display: none !important;
+    }
+
+    .right-nav span {
+        display: none !important;
+    }
+
+    .right-nav button {
+        padding: 4px 6px !important;
+        font-size: 0.7rem;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        padding: 8px 0;
+    }
+
+    .menu-item {
+        margin: 0 8px;
+        font-size: 10px;
+    }
+
+    .menu-item i {
+        font-size: 18px;
+    }
+
+    .left-panel {
+        max-height: 150px;
+        padding: 10px;
+    }
+
+    .search-box input {
+        padding: 8px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .template-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .card-box {
+        height: 80px;
+    }
+
+    .workspace {
+        padding: 8px;
+    }
+
+    .toolbar {
+        width: 90%;
+        padding: 6px 8px;
+        gap: 3px;
+    }
+
+    .toolbar button {
+        margin: 0;
+        font-size: 0.7rem;
+        padding: 4px 6px !important;
+    }
+
+    .canvas {
+        padding: 15px 10px;
+        margin-top: 10px;
+    }
+
+    .row {
+        gap: 8px !important;
+    }
+
+    .circle,
+    .square,
+    .pentagon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .triangle {
+        border-left: 35px solid transparent;
+        border-right: 35px solid transparent;
+        border-bottom: 70px solid #ff731e;
+    }
+
+    .plus {
+        width: 60px;
+        height: 60px;
+    }
+
+    .plus::before {
+        width: 20px;
+        height: 60px;
+        left: 20px;
+    }
+
+    .plus::after {
+        width: 60px;
+        height: 20px;
+        top: 20px;
+    }
+
+    .parallelogram {
+        width: 70px;
+        height: 60px;
+    }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+        margin-top: 25px;
+    }
+
+    .arrow::before {
+        left: -20px;
+        top: -40px;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 40px solid #8a57f6;
+    }
+
+    .heart {
+        width: 50px;
+        height: 50px;
+        margin-top: 15px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 50px;
+        height: 50px;
+    }
+
+    .heart::before {
+        top: -25px;
+    }
+
+    .heart::after {
+        left: 25px;
+    }
+
+    .footer {
+        height: 80px;
+    }
+}
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .sidebar {
+        width: 100px;
+    }
+
+    .left-panel {
+        width: 380px;
+    }
+
+    .canvas {
+        padding: 40px;
+    }
+
+    .toolbar {
+        gap: 10px;
+    }
+
+    .toolbar button {
+        margin: 0 8px;
+    }
 }
