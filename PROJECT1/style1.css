@@ -10,11 +10,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 13px;
   background: #f0f0f0;
-  color: #ffffff;
-  height: 100vh;
+  color: #111111;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
 }
 
 /* ── TOP BAR ── */
@@ -172,7 +172,7 @@ body {
 }
 
 .main {
-  overflow-y:scroll;
+  overflow-y: scroll;
   display: flex;
   flex: 1;
   /* overflow: hidden; */
@@ -269,10 +269,11 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
-.sidebar-search-row i{
-  padding:5px;
-  background:#fff;
-  color:#666;
+
+.sidebar-search-row i {
+  padding: 5px;
+  background: #fff;
+  color: #666;
 
 }
 
@@ -280,7 +281,7 @@ body {
   width: 16px;
   height: 16px;
   stroke: #9d9d9d;
-  background:transparent;
+  background: transparent;
 }
 
 .sidebar-input {
@@ -347,8 +348,10 @@ body {
 }
 
 .sidebar-body img {
-  width: 148px;
+  width: 100%;
   height: 98px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .sb-section-header {
@@ -356,6 +359,205 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 280px;
+  }
+
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .canvas {
+    width: 100%;
+    max-width: 760px;
+    padding: 26px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .icon-rail {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+  }
+
+  .rail-item {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 10px;
+  }
+
+  .rail-item span {
+    display: none;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .right-panel {
+    width: 100%;
+  }
+
+  .canvas-wrapper {
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  .edit-toolbar {
+    width: 100%;
+    margin: 10px 0;
+    padding: 16px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .canvas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 360px;
+    padding: 24px;
+  }
+
+  .canvas-bottom {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .cb-right {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    gap: 6px;
+    justify-content: space-between;
+  }
+
+  .tb-right {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tb-new-badge {
+    display: none;
+  }
+
+  .sidebar-search-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sidebar-btns {
+    flex-direction: column;
+  }
+
+  .sidebar-input {
+    width: 100%;
+  }
+
+  .canvas {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .shape-circle,
+  .shape-square,
+  .shape-cross,
+  .shape-parallelogram,
+  .shape-pentagon,
+  .shape-arrow,
+  .shape-heart {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shape-triangle {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #f07c2e;
+  }
+
+  .canvas-center {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .canvas-center .center-img,
+  .canvas-center .center-icon {
+    width: 100%;
+    height: auto;
+    min-height: 90px;
+  }
+
+  .cb-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .volume-box {
+    width: 100%;
+  }
+
+  .zoom-label,
+  .page-label {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0 8px;
+  }
+
+  .tb-icon-btn,
+  .btn-present,
+  .btn-share,
+  .tb-trial-btn {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  .edit-toolbar {
+    padding: 12px;
+  }
+
+  .sidebar {
+    padding: 0;
+  }
+
+  .sidebar-top {
+    padding: 10px 8px 6px;
+  }
+
+  .canvas {
+    padding: 14px;
+  }
 }
 
 .sb-section-title {
@@ -638,8 +840,8 @@ hr {
 }
 
 .cb-btn {
-  background:transparent;
-  border:none;
+  background: transparent;
+  border: none;
   border-radius: 5px;
   padding: 4px 10px;
   font-size: 14px;
@@ -815,5 +1017,5 @@ i {
   width: 26px;
   height: 26px;
   stroke: #9d9d9d;
-  background:transparent;
+  background: transparent;
 }
